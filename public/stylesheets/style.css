@@ -26,13 +26,14 @@ header.mobile {
     display: none;
 }
 
-header span.wikistream {
+header .wikistream {
     font-size: 20pt;
     font-weight: bold;
 }
 
-header span.pauseInfo {
+header .pauseInfo {
     font-size: 8pt;
+    text-align: center;
 }
 
 header img {

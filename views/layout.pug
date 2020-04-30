@@ -1,4 +1,4 @@
-!!! 5
+doctype html
 html
   head
     title= title
@@ -20,17 +20,16 @@ html
   body
     header(class='screen')
       img(alt="Wikipedia globe", src="images/wikipedia.png")
-      br
-      span(class='wikistream')
+      div(class='wikistream')
         a(href="/") wikistream
-      br
-      span(class='pauseInfo') Press "p" to pause
+      div(class='pauseInfo') Press "p" to pause
 
     header(class='mobile')
       strong
         a(href="/") wikistream
 
     a(id="github", target="_blank", href="http://github.com/edsu/wikistream")
-      img(style="position: absolute; top: 0; right: 0; border: 0; z-index: 3;", src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67", alt="Fork me on GitHub")
+      img(style="position: absolute; top: 0; right: 0; border: 0; z-index: 3;", src="https://tools.wmflabs.org/static/res/logos/forkme_right_darkblue.png", alt="Fork me on GitHub")
     br
-    div(id="content")!= body
+    div(id="content")
+      block content

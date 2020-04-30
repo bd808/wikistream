@@ -15,7 +15,7 @@ var lastBackgroundChange = new Date() - backgroundTimeout;
 function init() {
   setupControls();
   var numUpdates = getNumUpdates();
-  var socket = io.connect();
+  var socket = io();
   socket.on('message', function(msg) {
     
     // apply filters
@@ -118,18 +118,11 @@ function removeOld(numUpdates) {
 function togglePause() {
   pause = ! pause;
   if (pause) {
-    $('header').block({ 
-      message: '<br/>Paused<br/>Press \'p\' to unpause', 
-      css: {
-        'border': 'none',
-        'color': 'black',
-        'opacity': '1',
-        'width': '280px',
-        'height': '70px'
-      }
-    });
+    $('header .pauseInfo').html(
+      '<strong>Paused.</strong><br/>Press "p" to unpause'
+    );
   } else {
-    $('header').unblock();
+    $('header .pauseInfo').html('Press "p" to pause');
   }
 }
 
